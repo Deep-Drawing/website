@@ -12,13 +12,13 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <main className="mt-32 flex flex-col gap-12 max-w-5xl mx-auto w-full">
-        <h1 className="text-5xl md:text-7xl tracking-tight">
+      <main className="mt-24 flex flex-col gap-8 max-w-3xl mx-auto w-full">
+        <h1 className="text-3xl md:text-5xl font-medium tracking-tight">
           Deep Drawing
         </h1>
         
         <p className="text-lg md:text-xl font-light w-full leading-relaxed">
-          Towards an instantaneous artistic dialogue between humans and AI. Through sound.
+          Towards an intuitive artistic dialogue between humans and AI. Through sound.
         </p>
 
         <div className="aspect-[16/9] w-full bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden relative">
@@ -30,8 +30,8 @@ export default function Home() {
       </main>
 
       {/* About Section */}
-      <section id="about" className="mt-32 max-w-5xl mx-auto w-full">
-        <h2 className="text-2xl font-semibold mb-12 tracking-tight">About</h2>
+      <section id="about" className="mt-24 max-w-3xl mx-auto w-full scroll-mt-24">
+        <h2 className="text-2xl font-semibold mb-8 tracking-tight">About</h2>
         
         <p className="text-lg font-light leading-relaxed mb-6">
           Description of Deep Drawing, and pictures, if necessary.
@@ -39,10 +39,10 @@ export default function Home() {
       </section>
 
       {/* Publications Section */}
-      <section id="publications" className="mt-32 max-w-5xl mx-auto w-full">
-        <h2 className="text-2xl font-semibold mb-12 tracking-tight">Publications</h2>
+      <section id="publications" className="mt-24 max-w-3xl mx-auto w-full scroll-mt-24">
+        <h2 className="text-2xl font-semibold mb-8 tracking-tight">Publications</h2>
         
-        <div className="space-y-12">
+        <div className="space-y-8">
           {/* Publication 1 */}
           <div className="border-l-2 border-foreground/10 pl-6 py-2">
             <h3 className="text-xl font-medium">Publication Title and Subtitle</h3>
@@ -58,13 +58,13 @@ export default function Home() {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="mt-32 max-w-5xl mx-auto w-full mb-32">
-        <h2 className="text-2xl font-semibold mb-12 tracking-tight">Team</h2>
+      <section id="team" className="mt-24 max-w-3xl mx-auto w-full mb-32 scroll-mt-24">
+        <h2 className="text-2xl font-semibold mb-8 tracking-tight">Team</h2>
         
         {/* Faculties and Current Students */}
         <div className="mb-16">
           <h3 className="text-xl font-medium mb-8">Faculties and Current Students</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[1, 2].map((item) => (
               <a href="#" key={`faculty-${item}`} className="group cursor-pointer">
                 <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
@@ -96,7 +96,7 @@ export default function Home() {
         {/* Alumni */}
         <div className="mb-16">
           <h3 className="text-xl font-medium mb-8">Alumni</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[1, 2, 3].map((item) => (
               <a href="#" key={`past-${item}`} className="group cursor-pointer">
                 <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
