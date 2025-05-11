@@ -27,7 +27,7 @@ export default function Home() {
 
             <div className="aspect-[16/9] w-full bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden relative">
               <Image 
-                src="/images/placeholder.png" 
+                src="/images/cover.png" 
                 alt="" 
                 fill
                 className="object-cover"
