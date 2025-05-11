@@ -1,9 +1,11 @@
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <div className="min-h-screen p-8 font-[family-name:var(--font-geist-sans)] flex flex-col">
       {/* Navigation */}
       <nav className="fixed top-0 w-full px-8 py-6 flex justify-between items-center z-10 bg-background/80 backdrop-blur-sm">
-        <div className="text-lg font-medium tracking-tight"><i>deep drawing</i></div>
+        <div className="text-lg font-medium tracking-tight"><a href="#"><i>Deep Drawing</i></a></div>
         <div className="flex gap-8 text-lg pr-16">
           <a href="#about" className="hover:opacity-70 transition-opacity">About</a>
           <a href="#publications" className="hover:opacity-70 transition-opacity">Publications</a>
@@ -12,26 +14,53 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <main className="mt-24 flex flex-col gap-8 max-w-3xl mx-auto w-full">
-        <h1 className="text-3xl md:text-5xl font-medium tracking-tight">
-          Deep Drawing
-        </h1>
-        
-        <p className="text-lg md:text-xl font-light w-full leading-relaxed">
-          Towards an intuitive artistic dialogue between humans and AI. Through sound.
-        </p>
+      <main className="h-[calc(100vh-2rem)] flex flex-col justify-between pb-8 max-w-3xl mx-auto w-full mt-[-1rem]">
+        <div className="flex flex-col gap-8 mt-20">
+          <h1 className="text-center text-3xl md:text-5xl font-medium tracking-tight">
+            Deep Drawing
+          </h1>
+          
+          <p className="text-center text-lg md:text-xl font-light w-full leading-relaxed">
+            Towards an intuitive artistic dialogue between humans and AI. Through sound.
+          </p>
 
-        <div className="aspect-[16/9] w-full bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden relative">
-          {/* Image placeholder - replace with actual image */}
-          <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
-            Featured Project Image
+          <div className="aspect-[16/9] w-full bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden relative">
+            <Image 
+              src="/images/placeholder.png" 
+              alt="" 
+              fill
+              className="object-cover"
+            />
           </div>
+        </div>
+        
+        <div className="flex justify-center mt-6">
+          <a 
+            href="#about" 
+            className="animate-bounce-slow flex flex-col items-center text-foreground/70 hover:text-foreground transition-colors"
+            aria-label="Scroll to About section"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="36" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              className="lucide lucide-chevron-down"
+            >
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </a>
         </div>
       </main>
 
       {/* About Section */}
       <section id="about" className="mt-24 max-w-3xl mx-auto w-full scroll-mt-24">
-        <h2 className="text-2xl font-semibold mb-8 tracking-tight">About</h2>
+        <h2 className="text-center text-2xl font-semibold mb-8 tracking-tight">About</h2>
         
         <p className="text-lg font-light leading-relaxed mb-6">
           Description of Deep Drawing, and pictures, if necessary.
@@ -40,7 +69,7 @@ export default function Home() {
 
       {/* Publications Section */}
       <section id="publications" className="mt-24 max-w-3xl mx-auto w-full scroll-mt-24">
-        <h2 className="text-2xl font-semibold mb-8 tracking-tight">Publications</h2>
+        <h2 className="text-center text-2xl font-semibold mb-8 tracking-tight">Publications</h2>
         
         <div className="space-y-8">
           {/* Publication 1 */}
@@ -59,7 +88,7 @@ export default function Home() {
 
       {/* Team Section */}
       <section id="team" className="mt-24 max-w-3xl mx-auto w-full mb-32 scroll-mt-24">
-        <h2 className="text-2xl font-semibold mb-8 tracking-tight">Team</h2>
+        <h2 className="text-center text-2xl font-semibold mb-8 tracking-tight">Team</h2>
         
         {/* Faculties and Current Students */}
         <div className="mb-16">
