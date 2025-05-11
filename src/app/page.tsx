@@ -1,102 +1,131 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen p-8 font-[family-name:var(--font-geist-sans)] flex flex-col">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full px-8 py-6 flex justify-between items-center z-10 bg-background/80 backdrop-blur-sm">
+        <div className="text-lg font-medium tracking-tight"><i>deep drawing</i></div>
+        <div className="flex gap-8 text-medium pr-16">
+          <a href="#about" className="hover:opacity-70 transition-opacity">About</a>
+          <a href="#publications" className="hover:opacity-70 transition-opacity">Publications</a>
+          <a href="#team" className="hover:opacity-70 transition-opacity">Team</a>
+        </div>
+      </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <main className="mt-32 flex flex-col gap-12 max-w-5xl mx-auto w-full">
+        <h1 className="text-5xl md:text-7xl font-light tracking-tight">
+          Deep Drawing
+        </h1>
+        
+        <p className="text-lg md:text-xl font-light w-full leading-relaxed text-foreground/80">
+          Towards an instantaneous artistic dialogue between humans and AI through sound.
+        </p>
+
+        <div className="aspect-[16/9] w-full bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden relative">
+          {/* Image placeholder - replace with your actual image */}
+          <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
+            Featured Project Image
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* About Section */}
+      <section id="about" className="mt-32 max-w-5xl mx-auto w-full">
+        <h2 className="text-2xl font-light mb-12 tracking-tight">About</h2>
+        
+        <p className="text-lg font-light leading-relaxed mb-6">
+          Description of Deep Drawing, and pictures, if necessary.
+        </p>
+      </section>
+
+      {/* Publications Section */}
+      <section id="publications" className="mt-32 max-w-5xl mx-auto w-full">
+        <h2 className="text-2xl font-light mb-12 tracking-tight">Publications</h2>
+        
+        <div className="space-y-12">
+          {/* Publication 1 */}
+          <div className="border-l-2 border-foreground/10 pl-6 py-2">
+            <h3 className="text-xl font-medium">Publication Title and Subtitle</h3>
+            <p className="text-md text-foreground/70 mt-2 mb-2">Conference, Year</p>
+            <p className="text-md mb-4">Author 1, Author 2, Author 3</p>
+            <div className="flex gap-4">
+              <a href="#" className="text-sm underline hover:text-foreground/70 transition-colors">PDF</a>
+              <a href="#" className="text-sm underline hover:text-foreground/70 transition-colors">Demo</a>
+              <a href="#" className="text-sm underline hover:text-foreground/70 transition-colors">Code</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section id="team" className="mt-32 max-w-5xl mx-auto w-full mb-32">
+        <h2 className="text-2xl font-light mb-12 tracking-tight">Team</h2>
+        
+        {/* Faculty Members */}
+        <div className="mb-16">
+          <h3 className="text-xl font-light mb-8">Faculty</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            {[1, 2].map((item) => (
+              <a href="#" key={`faculty-${item}`} className="group cursor-pointer">
+                <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
+                  {/* Replace with actual faculty images */}
+                  <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
+                    Faculty {item}
+                  </div>
+                </div>
+                <h4 className="text-lg font-medium">Faculty Name {item}</h4>
+                <p className="text-sm text-foreground/70 mt-1">Professor</p>
+              </a>
+            ))}
+          </div>
+        </div>
+        
+        {/* Current Members */}
+        <div className="mb-16">
+          <h3 className="text-xl font-light mb-8">Current Members</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            {[1, 2, 3].map((item) => (
+              <a href="#" key={`current-${item}`} className="group cursor-pointer">
+                <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
+                  {/* Replace with actual current member images */}
+                  <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
+                    Member {item}
+                  </div>
+                </div>
+                <h4 className="text-lg font-medium">Member Name {item}</h4>
+                <p className="text-sm text-foreground/70 mt-1">Role</p>
+              </a>
+            ))}
+          </div>
+        </div>
+        
+        {/* Alumni */}
+        <div className="mb-16">
+          <h3 className="text-xl font-light mb-8">Alumni</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            {[1, 2, 3].map((item) => (
+              <a href="#" key={`past-${item}`} className="group cursor-pointer">
+                <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
+                  {/* Replace with actual alumni images */}
+                  <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
+                    Alumni {item}
+                  </div>
+                </div>
+                <h4 className="text-lg font-medium">Alumni Name {item}</h4>
+                <p className="text-sm text-foreground/70 mt-1">Former Role</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 border-t border-foreground/10 flex justify-between items-center text-sm text-foreground/70">
+        <div>© 2025 Deep Drawing</div>
+        <div className="flex gap-6">
+          <a href="#" className="hover:text-foreground transition-colors">FEAST</a>
+          <a href="#" className="hover:text-foreground transition-colors">GitHub</a>
+        </div>
       </footer>
     </div>
   );
