@@ -14,8 +14,8 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <main className="min-h-screen w-full flex flex-col px-4 pt-10">
-        <div className="flex-1 flex flex-col justify-evenly max-w-3xl mx-auto w-full">
+      <main className="min-h-screen w-full flex flex-col px-4 pt-6">
+        <div className="flex-1 flex flex-col justify-evenly max-w-4xl mx-auto w-full">
           <div className="flex flex-col gap-8">
             <h1 className="text-center text-3xl md:text-5xl font-medium tracking-tight">
               Deep Drawing
@@ -25,7 +25,7 @@ export default function Home() {
               Towards an intuitive artistic dialogue between humans and AI. Through sound.
             </p>
 
-            <div className="aspect-[16/9] w-full bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden relative">
+            <div className="aspect-[9/4] w-full bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden relative">
               <Image 
                 src="/images/cover.png" 
                 alt="" 
@@ -61,7 +61,7 @@ export default function Home() {
       </main>
 
       {/* About Section */}
-      <section id="about" className="mt-24 max-w-3xl mx-auto w-full scroll-mt-24">
+      <section id="about" className="mt-24 max-w-4xl mx-auto w-full scroll-mt-24">
         <h2 className="text-center text-3xl font-semibold mb-12 tracking-tight">About</h2>
 
         <div className="flex flex-col md:flex-row items-center gap-8 mb-20">
@@ -110,7 +110,7 @@ export default function Home() {
       </section>
 
       {/* Publications Section */}
-      <section id="publications" className="mt-24 max-w-3xl mx-auto w-full scroll-mt-24">
+      <section id="publications" className="mt-24 max-w-4xl mx-auto w-full scroll-mt-24">
         <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Publications</h2>
         
         <div className="space-y-8">
@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="mt-24 max-w-3xl mx-auto w-full mb-32 scroll-mt-24">
+      <section id="team" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
         <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Team</h2>
         
         {/* Faculties and Current Students */}
