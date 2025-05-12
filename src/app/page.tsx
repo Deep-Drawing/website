@@ -14,7 +14,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <main className="min-h-screen w-full flex flex-col px-4 pt-6">
+      <main className="min-h-screen w-full flex flex-col px-4 pt-4">
         <div className="flex-1 flex flex-col justify-evenly max-w-4xl mx-auto w-full">
           <div className="flex flex-col gap-8">
             <h1 className="text-center text-3xl md:text-5xl font-medium tracking-tight">
@@ -62,7 +62,7 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="mt-24 max-w-4xl mx-auto w-full scroll-mt-24">
-        <h2 className="text-center text-3xl font-semibold mb-12 tracking-tight">About</h2>
+        <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">About</h2>
 
         <div className="flex flex-col md:flex-row items-center gap-8 mb-20">
           <div className="flex-1 order-2 md:order-1">
@@ -134,7 +134,7 @@ export default function Home() {
         {/* Faculties and Current Students */}
         <div className="mb-16">
           <h3 className="text-xl font-medium mb-8">Faculties and Current Students</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
             {[1, 2].map((item) => (
               <a href="#" key={`faculty-${item}`} className="group cursor-pointer">
                 <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
@@ -157,7 +157,7 @@ export default function Home() {
                   </div>
                 </div>
                 <h4 className="text-lg">Student Name {item}</h4>
-                <p className="text-sm text-foreground/70 mt-1">Undergraduate/Master&apos;s/PhD Student</p>
+                <p className="text-sm text-foreground/70 mt-1">Undergraduate/MS/PhD Student</p>
               </a>
             ))}
           </div>
@@ -166,7 +166,7 @@ export default function Home() {
         {/* Alumni */}
         <div className="mb-16">
           <h3 className="text-xl font-medium mb-8">Alumni</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
             {[1, 2, 3].map((item) => (
               <a href="#" key={`past-${item}`} className="group cursor-pointer">
                 <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
@@ -176,7 +176,7 @@ export default function Home() {
                   </div>
                 </div>
                 <h4 className="text-lg">Alumni Name {item}</h4>
-                <p className="text-sm text-foreground/70 mt-1">Next: Master&apos;s/PhD at School</p>
+                <p className="text-sm text-foreground/70 mt-1">Next: MS/PhD at School</p>
               </a>
             ))}
           </div>
