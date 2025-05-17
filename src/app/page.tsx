@@ -129,7 +129,7 @@ export default function Home() {
 
       {/* Team Section */}
       <section id="team" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
-        <h2 className="text-center text-3xl font-regu mb-8 tracking-tight">Team</h2>
+        <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Team</h2>
         
         {/* Faculties and Current Students */}
         <div className="mb-16">
