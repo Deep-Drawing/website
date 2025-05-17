@@ -5,7 +5,7 @@ export default function Home() {
     <div className="min-h-screen p-8 font-[family-name:var(--font-geist-sans)] flex flex-col">
       {/* Navigation */}
       <nav className="fixed top-0 w-full px-8 py-6 flex justify-between items-center z-10 bg-background/80 backdrop-blur-sm">
-        <div className="text-lg font-medium tracking-tight"><a href="#"><i>Deep Drawing</i></a></div>
+        <div className="text-lg font-medium tracking-tight"><a href="#">画</a></div>
         <div className="flex gap-8 text-lg pr-16">
           <a href="#about" className="hover:opacity-70 transition-opacity">About</a>
           <a href="#publications" className="hover:opacity-70 transition-opacity">Publications</a>
@@ -129,7 +129,7 @@ export default function Home() {
 
       {/* Team Section */}
       <section id="team" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
-        <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Team</h2>
+        <h2 className="text-center text-3xl font-regu mb-8 tracking-tight">Team</h2>
         
         {/* Faculties and Current Students */}
         <div className="mb-16">
