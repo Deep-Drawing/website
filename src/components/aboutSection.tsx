@@ -10,10 +10,10 @@ export default function AboutSection() {
       <div className="flex flex-col md:flex-row items-center gap-8 mb-20">
         <div className="flex-1 order-2 md:order-1">
           <h3 className="text-2xl font-medium mb-4">Subtitle 1</h3>
-          <p className="text-lg font-light leading-relaxed mb-4">
+          <p className="text-md font-light leading-relaxed mb-4">
             Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing.
           </p>
-          <p className="text-lg font-light leading-relaxed">
+          <p className="text-md font-light leading-relaxed">
             Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing.
           </p>
         </div>
@@ -42,10 +42,10 @@ export default function AboutSection() {
         </div>
         <div className="flex-1 order-2">
           <h3 className="text-2xl font-medium mb-4">Subtitle 2</h3>
-          <p className="text-lg font-light leading-relaxed mb-4">
+          <p className="text-md font-light leading-relaxed mb-4">
             Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing. 
           </p>
-          <p className="text-lg font-light leading-relaxed">
+          <p className="text-md font-light leading-relaxed">
             Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing.
           </p>
         </div>
