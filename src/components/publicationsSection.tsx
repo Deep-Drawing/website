@@ -28,7 +28,7 @@ export default function PublicationsSection() {
       <div className="space-y-8">
         {sortedPublications.map((publication: Publication) => (
           <div key={publication.id} className="border-l-2 border-foreground/10 pl-6 py-2">
-            <h3 className="text-xl font-medium">{publication.title}</h3>
+            <h3 className="text-lg font-medium">{publication.title}</h3>
             <p className="text-md text-foreground/70 mt-2 mb-2">{publication.conference}</p>
             <p className="text-md font-light mb-4">{publication.authors.join(', ')}</p>
             <div className="flex gap-4">
