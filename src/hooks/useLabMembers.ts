@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { LabMembersData, LabMember } from '@/types/lab-members';
+import { LabMembersData, LabMember } from '@/types/labMembers';
 
 export function useLabMembers() {
   const [data, setData] = useState<LabMembersData | null>(null);
