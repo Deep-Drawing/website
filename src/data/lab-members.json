@@ -1,0 +1,56 @@
+{
+  "labMembers": [
+    {
+      "id": 1,
+      "profilePictureIndex": "01",
+      "name": "Julie Zhu",
+      "position": "Professor"
+    },
+    {
+      "id": 2,
+      "profilePictureIndex": "02",
+      "name": "John Granzow",
+      "position": "Professor"
+    },
+    {
+      "id": 3,
+      "profilePictureIndex": "03",
+      "name": "Erfun Ackley",
+      "position": "Next: PhD in Media Arts and Technology at UCSB"
+    },
+    {
+      "id": 4,
+      "profilePictureIndex": "04",
+      "name": "Zhiyu Alex Zhang",
+      "position": "Next: PhD in Information Science at UW"
+    },
+    {
+      "id": 5,
+      "profilePictureIndex": "05",
+      "name": "Lennon Seiders",
+      "position": "Next: "
+    },
+    {
+      "id": 6,
+      "profilePictureIndex": "06",
+      "name": "Henry Cao",
+      "position": "Undergraduate Student"
+    },
+    {
+      "id": 7,
+      "profilePictureIndex": "07",
+      "name": "Anusha Chinthamaduka",
+      "position": "Undergraduate Student"
+    },
+    {
+        "id": 8,
+        "profilePictureIndex": "08",
+        "name": "Ryan Lu",
+        "position": "Undergraduate Student"
+    }
+  ],
+  "metadata": {
+    "profilePictureBasePath": "/profile-pictures/",
+    "profilePictureExtension": ".jpg"
+  }
+} 

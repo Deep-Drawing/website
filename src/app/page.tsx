@@ -1,4 +1,112 @@
+'use client';
+
 import Image from 'next/image';
+import { useLabMembers } from '@/hooks/useLabMembers';
+
+function TeamSection() {
+  const { 
+    loading, 
+    error, 
+    getProfessors, 
+    getStudents, 
+    getAlums,
+    getProfilePictureUrl 
+  } = useLabMembers();
+
+  if (loading) {
+    return (
+      <section id="team" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
+        <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Team</h2>
+        <div className="flex justify-center items-center min-h-64">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-foreground/20"></div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section id="team" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
+        <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Team</h2>
+        <div className="text-center text-foreground/70 p-8">
+          <p>Error loading team members</p>
+        </div>
+      </section>
+    );
+  }
+
+  const professors = getProfessors();
+  const students = getStudents();
+  const alums = getAlums();
+
+  return (
+    <section id="team" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
+      <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Team</h2>
+      
+      {/* Faculty and Current Students */}
+      <div className="mb-16">
+        <h3 className="text-xl font-medium mb-8">Faculty and Current Students</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+          {professors.map((member) => (
+            <div key={member.id} className="group cursor-pointer">
+              <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
+                <Image
+                  src={getProfilePictureUrl(member)}
+                  alt={`${member.name} profile picture`}
+                  fill
+                  className="object-cover"
+                  sizes="160px"
+                />
+              </div>
+              <h4 className="text-lg">{member.name}</h4>
+              <p className="text-sm text-foreground/70 mt-1">{member.position}</p>
+            </div>
+          ))}
+
+          {students.map((member) => (
+            <div key={member.id} className="group cursor-pointer">
+              <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
+                <Image
+                  src={getProfilePictureUrl(member)}
+                  alt={`${member.name} profile picture`}
+                  fill
+                  className="object-cover"
+                  sizes="160px"
+                />
+              </div>
+              <h4 className="text-lg">{member.name}</h4>
+              <p className="text-sm text-foreground/70 mt-1">{member.position}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Alumni */}
+      {alums.length > 0 && (
+        <div className="mb-16">
+          <h3 className="text-xl font-medium mb-8">Alumni</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+            {alums.map((member) => (
+              <div key={member.id} className="group cursor-pointer">
+                <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
+                  <Image
+                    src={getProfilePictureUrl(member)}
+                    alt={`${member.name} profile picture`}
+                    fill
+                    className="object-cover"
+                    sizes="160px"
+                  />
+                </div>
+                <h4 className="text-lg">{member.name}</h4>
+                <p className="text-sm text-foreground/70 mt-1">{member.position}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
 
 export default function Home() {
   return (
@@ -87,7 +195,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center gap-8 mb-20">
-          <div className="flex-1 order-1 bg-gradient-to-r from-purple-100 to-purple-300 dark:from-purple-950 dark:to-purple-800 rounded-lg overflow-hidden">
+          <div className="flex-1 order-1 bg-gradient-to-r from-purple-100 to-purple-300 dark:from-purple-950 dark:purple-800 rounded-lg overflow-hidden">
             <div className="aspect-[1/1] relative">
               <Image 
                 src="/images/about-2.png" 
@@ -128,60 +236,7 @@ export default function Home() {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
-        <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Team</h2>
-        
-        {/* Faculty and Current Students */}
-        <div className="mb-16">
-          <h3 className="text-xl font-medium mb-8">Faculty and Current Students</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-            {[1, 2].map((item) => (
-              <a href="#" key={`faculty-${item}`} className="group cursor-pointer">
-                <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
-                  {/* Replace with actual faculty images */}
-                  <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
-                    Faculty {item}
-                  </div>
-                </div>
-                <h4 className="text-lg">Faculty Name {item}</h4>
-                <p className="text-sm text-foreground/70 mt-1">Professor</p>
-              </a>
-            ))}
-
-            {[1, 2, 3].map((item) => (
-              <a href="#" key={`current-${item}`} className="group cursor-pointer">
-                <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
-                  {/* Replace with actual current student images */}
-                  <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
-                    Student {item}
-                  </div>
-                </div>
-                <h4 className="text-lg">Student Name {item}</h4>
-                <p className="text-sm text-foreground/70 mt-1">Undergraduate/MS/PhD Student</p>
-              </a>
-            ))}
-          </div>
-        </div>
-        
-        {/* Alumni */}
-        <div className="mb-16">
-          <h3 className="text-xl font-medium mb-8">Alumni</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-            {[1, 2, 3].map((item) => (
-              <a href="#" key={`past-${item}`} className="group cursor-pointer">
-                <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
-                  {/* Replace with actual alumni images */}
-                  <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
-                    Alumni {item}
-                  </div>
-                </div>
-                <h4 className="text-lg">Alumni Name {item}</h4>
-                <p className="text-sm text-foreground/70 mt-1">Next: MS/PhD at School</p>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TeamSection />
 
       {/* Footer */}
       <footer className="py-8 border-t border-foreground/10 flex justify-between items-center text-sm text-foreground/70">
