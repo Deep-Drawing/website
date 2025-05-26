@@ -131,9 +131,9 @@ export default function Home() {
       <section id="team" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
         <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Team</h2>
         
-        {/* Faculties and Current Students */}
+        {/* Faculty and Current Students */}
         <div className="mb-16">
-          <h3 className="text-xl font-medium mb-8">Faculties and Current Students</h3>
+          <h3 className="text-xl font-medium mb-8">Faculty and Current Students</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
             {[1, 2].map((item) => (
               <a href="#" key={`faculty-${item}`} className="group cursor-pointer">
