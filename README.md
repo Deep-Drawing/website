@@ -160,6 +160,60 @@ For students, include the word "Student" in the position field:
 }
 ```
 
+### 4. Related Projects
+
+Related projects are managed through a JSON file to showcase relevant work and research.
+
+#### File Location
+- **File**: `src/data/relatedProjects.json`
+
+#### Structure
+```json
+{
+  "relatedProjects": [
+    {
+      "id": 1,
+      "title": "Project Title",
+      "description": "Brief description of the project and its relevance to our research.",
+      "url": "https://example.com/project",
+      "tags": ["Tag 1", "Tag 2"],
+      "relevance": "Explanation of how this project relates to or inspired our work",
+      "authors": ["Author 1", "Author 2", "Author 3"]
+    }
+  ]
+}
+```
+
+#### Required Fields
+- `id`: Unique identifier (number)
+- `title`: Project title (string)
+- `description`: Brief description of the project (string)
+- `url`: Link to the project (string)
+- `tags`: Array of relevant tags/categories
+- `relevance`: Explanation of connection to Deep Drawing research (string)
+- `authors`: Array of project authors/creators
+
+#### How to Update
+1. Open `src/data/relatedProjects.json`
+2. Add new projects to the array or modify existing ones
+3. Ensure each project has a unique `id`
+4. Include all required fields
+5. Use descriptive tags that help categorize the project
+6. Clearly explain the relevance to Deep Drawing research
+
+#### Example: Adding a New Related Project
+```json
+{
+  "id": 1,
+  "title": "DrawingBot",
+  "description": "AI-powered drawing assistant that helps users create digital art through voice commands and gesture recognition.",
+  "url": "https://github.com/example/drawingbot",
+  "tags": ["Digital Art", "Human-Computer Interaction"],
+  "relevance": "Demonstrates innovative approaches to human-drawing interfaces that complement our therapeutic drawing research",
+  "authors": ["John Smith", "Sarah Johnson"]
+}
+```
+
 ## Development Notes
 
 - The website uses Next.js with TypeScript
@@ -168,4 +222,4 @@ For students, include the word "Student" in the position field:
 
 ## Deployment
 
-Reach out to Alex
+Contact Alex (`alexzzy@uw.edu`)
