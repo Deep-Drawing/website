@@ -3,9 +3,9 @@
     {
       "id": 1,
       "title": "SoundInk",
-      "description": "Interactive web application that sonifies and creates music from drawings using React and Web Audio API for therapeutic and educational experiences.",
+      "description": "Web application that sonifies drawings using React and Web Audio API for therapeutic and educational experiences.",
       "url": "https://www.erfunackley.com/projects/soundink",
-      "tags": ["Music Therapy", "Web Audio API", "Interactive Art"],
+      "tags": ["Music Therapy", "Interactive Art"],
       "relevance": "Inspired our approach to real-time audio generation and interactive drawing interfaces",
       "authors": ["Anıl Çamcı", "Yousef El-Magharbel", "Erfun Ackley"]
     }
