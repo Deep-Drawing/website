@@ -15,7 +15,7 @@ export default function TeamSection() {
 
   if (loading) {
     return (
-      <section id="team" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
+      <section id="team" className="mt-24 max-w-4xl mx-auto w-full scroll-mt-24">
         <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Team</h2>
         <div className="flex justify-center items-center min-h-64">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-foreground/20"></div>
@@ -26,7 +26,7 @@ export default function TeamSection() {
 
   if (error) {
     return (
-      <section id="team" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
+      <section id="team" className="mt-24 max-w-4xl mx-auto w-full scroll-mt-24">
         <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Team</h2>
         <div className="text-center text-foreground/70 p-8">
           <p>Error loading team members</p>
@@ -40,7 +40,7 @@ export default function TeamSection() {
   const alums = getAlums();
 
   return (
-    <section id="team" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
+    <section id="team" className="mt-24 max-w-4xl mx-auto w-full scroll-mt-24">
       <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Team</h2>
       
       {/* Faculty and Current Students */}

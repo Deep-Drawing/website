@@ -16,6 +16,7 @@ export default function PageShell({ children }: PageShellProps) {
           <a href="#about" className="hover:opacity-70 transition-opacity">About</a>
           <a href="#publications" className="hover:opacity-70 transition-opacity">Publications</a>
           <a href="#team" className="hover:opacity-70 transition-opacity">Team</a>
+          <a href="#related-projects" className="hover:opacity-70 transition-opacity">Related Projects</a>
         </div>
       </nav>
 
