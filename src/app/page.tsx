@@ -6,6 +6,7 @@ import AboutSection from '@/components/aboutSection';
 import TeamSection from '@/components/teamSection';
 import PublicationsSection from '@/components/publicationsSection';
 import RelatedProjectsSection from '@/components/relatedProjectsSection';
+import JoinUsSection from '@/components/joinUsSection';
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
       <TeamSection />
 
       <RelatedProjectsSection />
+
+      <JoinUsSection />
     </PageShell>
   );
 }

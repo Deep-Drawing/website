@@ -16,7 +16,7 @@ export default function RelatedProjectsSection() {
   const { relatedProjects } = relatedProjectsData;
 
   return (
-    <section id="related-projects" className="mt-24 max-w-4xl mx-auto w-full mb-32 scroll-mt-24">
+    <section id="related-projects" className="mt-24 max-w-4xl mx-auto w-full scroll-mt-24">
       <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Related Projects</h2>
       
       <div 
