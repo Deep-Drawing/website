@@ -58,7 +58,8 @@ export function useLabMembers() {
   const getAlums = () => {
     if (!data) return [];
     return data.labMembers.filter(member => 
-      member.position.toLowerCase().includes('next')
+      member.position.toLowerCase() !== 'professor' && 
+      !member.position.toLowerCase().includes('student')
     );
   };
 
