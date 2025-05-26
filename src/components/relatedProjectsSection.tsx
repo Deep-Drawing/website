@@ -20,7 +20,7 @@ export default function RelatedProjectsSection() {
       <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Related Projects</h2>
       
       <div 
-        className="flex gap-6 overflow-x-auto pb-4"
+        className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide"
         style={{
           scrollbarWidth: 'auto',
           scrollbarColor: 'rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1)'
