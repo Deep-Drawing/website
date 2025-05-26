@@ -3,6 +3,7 @@ export interface LabMember {
   profilePictureIndex: string;
   name: string;
   position: string;
+  website?: string;
 }
 
 export interface LabMembersMetadata {

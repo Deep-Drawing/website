@@ -47,47 +47,9 @@ function TeamSection() {
       <div className="mb-16">
         <h3 className="text-xl font-medium mb-8">Faculty and Current Students</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-          {professors.map((member) => (
-            <div key={member.id} className="group cursor-pointer">
-              <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
-                <Image
-                  src={getProfilePictureUrl(member)}
-                  alt={`${member.name} profile picture`}
-                  fill
-                  className="object-cover"
-                  sizes="160px"
-                />
-              </div>
-              <h4 className="text-lg">{member.name}</h4>
-              <p className="text-sm text-foreground/70 mt-1">{member.position}</p>
-            </div>
-          ))}
-
-          {students.map((member) => (
-            <div key={member.id} className="group cursor-pointer">
-              <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
-                <Image
-                  src={getProfilePictureUrl(member)}
-                  alt={`${member.name} profile picture`}
-                  fill
-                  className="object-cover"
-                  sizes="160px"
-                />
-              </div>
-              <h4 className="text-lg">{member.name}</h4>
-              <p className="text-sm text-foreground/70 mt-1">{member.position}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      {/* Alumni */}
-      {alums.length > 0 && (
-        <div className="mb-16">
-          <h3 className="text-xl font-medium mb-8">Alumni</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-            {alums.map((member) => (
-              <div key={member.id} className="group cursor-pointer">
+          {professors.map((member) => {
+            const content = (
+              <>
                 <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
                   <Image
                     src={getProfilePictureUrl(member)}
@@ -99,8 +61,100 @@ function TeamSection() {
                 </div>
                 <h4 className="text-lg">{member.name}</h4>
                 <p className="text-sm text-foreground/70 mt-1">{member.position}</p>
+              </>
+            );
+
+            return member.website ? (
+              <a
+                key={member.id}
+                href={member.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer hover:opacity-80 transition-opacity"
+              >
+                {content}
+              </a>
+            ) : (
+              <div key={member.id} className="group">
+                {content}
               </div>
-            ))}
+            );
+          })}
+
+          {students.map((member) => {
+            const content = (
+              <>
+                <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
+                  <Image
+                    src={getProfilePictureUrl(member)}
+                    alt={`${member.name} profile picture`}
+                    fill
+                    className="object-cover"
+                    sizes="160px"
+                  />
+                </div>
+                <h4 className="text-lg">{member.name}</h4>
+                <p className="text-sm text-foreground/70 mt-1">{member.position}</p>
+              </>
+            );
+
+            return member.website ? (
+              <a
+                key={member.id}
+                href={member.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer hover:opacity-80 transition-opacity"
+              >
+                {content}
+              </a>
+            ) : (
+              <div key={member.id} className="group">
+                {content}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      
+      {/* Alumni */}
+      {alums.length > 0 && (
+        <div className="mb-16">
+          <h3 className="text-xl font-medium mb-8">Alumni</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+            {alums.map((member) => {
+              const content = (
+                <>
+                  <div className="aspect-square bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4 relative w-40">
+                    <Image
+                      src={getProfilePictureUrl(member)}
+                      alt={`${member.name} profile picture`}
+                      fill
+                      className="object-cover"
+                      sizes="160px"
+                    />
+                  </div>
+                  <h4 className="text-lg">{member.name}</h4>
+                  <p className="text-sm text-foreground/70 mt-1">{member.position}</p>
+                </>
+              );
+
+              return member.website ? (
+                <a
+                  key={member.id}
+                  href={member.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group cursor-pointer hover:opacity-80 transition-opacity"
+                >
+                  {content}
+                </a>
+              ) : (
+                <div key={member.id} className="group">
+                  {content}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
