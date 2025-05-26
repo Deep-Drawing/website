@@ -1,0 +1,24 @@
+{
+  "publications": [
+    {
+      "id": 1,
+      "title": "Deep Drawing: An Intermedia AI Co-Performer",
+      "authors": ["Julie Zhu", "Erfun Ackley", "Zhiyu Zhang", "John Granzow"],
+      "conference": "The International Conference on AI and Musical Creativity (AIMC) 2024",
+      "year": 2024,
+      "links": {
+        "pdf": "https://aimc2024.pubpub.org/pub/859kww47/release/1",
+        "code": "https://github.com/Deep-Drawing/spectrogram-models"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Deep Drawing: Spectra and Sound-Source Localization (forthcoming)",
+      "authors": ["Julie Zhu", "Erfun Ackley", "Zhiyu Zhang", "John Granzow"],
+      "conference": "The International Computer Music Conference (ICMC) 2025",
+      "year": 2025,
+      "links": {
+      }
+    }
+  ]
+} 

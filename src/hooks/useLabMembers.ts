@@ -11,7 +11,7 @@ export function useLabMembers() {
       try {
         setLoading(true);
         // Import the JSON data
-        const labMembersData = await import('@/data/lab-members.json');
+        const labMembersData = await import('@/data/labMembers.json');
         setData(labMembersData.default);
         setError(null);
       } catch (err) {

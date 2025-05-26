@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import TeamSection from '@/components/teamSection';
+import PublicationsSection from '@/components/publicationsSection';
 
 export default function Home() {
   return (
@@ -113,22 +114,7 @@ export default function Home() {
       </section>
 
       {/* Publications Section */}
-      <section id="publications" className="mt-24 max-w-4xl mx-auto w-full scroll-mt-24">
-        <h2 className="text-center text-3xl font-semibold mb-8 tracking-tight">Publications</h2>
-        
-        <div className="space-y-8">
-          <div className="border-l-2 border-foreground/10 pl-6 py-2">
-            <h3 className="text-xl font-medium">Publication Title and Subtitle</h3>
-            <p className="text-md text-foreground/70 mt-2 mb-2">Conference, Year</p>
-            <p className="text-md font-light mb-4">Author 1, Author 2, Author 3</p>
-            <div className="flex gap-4">
-              <a href="#" className="text-sm underline hover:text-foreground/70 transition-colors">PDF</a>
-              <a href="#" className="text-sm underline hover:text-foreground/70 transition-colors">Demo</a>
-              <a href="#" className="text-sm underline hover:text-foreground/70 transition-colors">Code</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PublicationsSection />
 
       {/* Team Section */}
       <TeamSection />
