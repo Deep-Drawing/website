@@ -9,12 +9,8 @@ export default function AboutSection() {
 
       <div className="flex flex-col md:flex-row items-center gap-8 mb-20">
         <div className="flex-1 order-2 md:order-1">
-          <h3 className="text-2xl font-medium mb-4">Subtitle 1</h3>
-          <p className="text-md font-light leading-relaxed mb-4">
-            Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing.
-          </p>
           <p className="text-md font-light leading-relaxed">
-            Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing.
+            Imagine your signature, its particular loops with its particular rhythms. Imagine writing your signature over and over until it becomes a loop and a beat. Hold onto that sound. Now imagine a machine that tries to guess your signature just from the sound. With enough mics and training, would it, could it, reproduce your signature?
           </p>
         </div>
         <div className="flex-1 order-1 md:order-2 bg-gradient-to-r from-blue-100 to-blue-300 dark:from-blue-950 dark:to-blue-800 rounded-lg overflow-hidden">
@@ -41,12 +37,8 @@ export default function AboutSection() {
           </div>
         </div>
         <div className="flex-1 order-2">
-          <h3 className="text-2xl font-medium mb-4">Subtitle 2</h3>
-          <p className="text-md font-light leading-relaxed mb-4">
-            Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing. 
-          </p>
           <p className="text-md font-light leading-relaxed">
-            Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing. Description of Deep Drawing.
+            Deep Drawing is an intermedia AI co-performer that creates a real-time artistic dialogue with human artists on a shared web-based canvas. Our system employs four contact microphones attached to a drawing surface to capture the subtle sounds of pen strokes. Upon predicting the path of the pen through custom machine learning surface sound source localization, the system overlays its predictions onto a live video feed of the human drawing.
           </p>
         </div>
       </div>
