@@ -6,8 +6,17 @@
       "description": "Web application that sonifies drawings using React and Web Audio API for therapeutic and educational experiences.",
       "url": "https://www.erfunackley.com/projects/soundink",
       "tags": ["Music Therapy", "Interactive Art"],
-      "relevance": "Inspired our approach to real-time audio generation and interactive drawing interfaces",
+      "relevance": "Inspired our approach to real-time audio generation and interactive drawing interfaces.",
       "authors": ["Anıl Çamcı", "Yousef El-Magharbel", "Erfun Ackley"]
+    },
+    {
+      "id": 2,
+      "title": "The Deckle Project",
+      "description": "Interactive drawing interface that explores the relationship between visual mark-making and sound generation.",
+      "url": "https://nime.org/proc/choi2012/index.html",
+      "tags": ["Interactive Art", "Sound Design", "HCI"],
+      "relevance": "Pioneering work in visual-sonic mapping that influenced our approach to real-time drawing-to-sound translation.",
+      "authors": ["Hongchan Choi", "John Granzow", "Joel Sadler"]
     }
   ]
 } 
