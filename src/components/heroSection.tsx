@@ -17,7 +17,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.05),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.05),transparent_50%)]" />
       
       <div className="container-custom relative z-10 h-full flex flex-col justify-center">
-        <div className="text-center space-y-6 py-8">
+        <div className="text-center space-y-6 pt-8 pb-20">
           {/* Main Title */}
           <div className="">
             <h1 
@@ -64,29 +64,29 @@ export default function HeroSection() {
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-foreground/5 to-transparent rounded-full blur-xl animate-float" />
             <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-tr from-foreground/3 to-transparent rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }} />
           </div>
+        </div>
 
-          {/* Scroll Indicator */}
-          <div 
-            className={`flex flex-col items-center space-y-2 animate-pulse-subtle ${
-              mounted ? 'animate-fade-in-up animate-stagger-3' : 'opacity-0'
-            }`}
+        {/* Scroll Indicator */}
+        <div 
+          className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 animate-pulse-subtle ${
+            mounted ? 'animate-fade-in-up animate-stagger-3' : 'opacity-0'
+          }`}
+        >
+          <span className="text-xs text-muted font-medium tracking-wider uppercase">Scroll to explore</span>
+          <a 
+            href="#about" 
+            className="p-2 rounded-full hover:bg-accent transition-colors duration-300 focus-ring"
+            aria-label="Scroll to About section"
           >
-            <span className="text-xs text-muted font-medium tracking-wider uppercase">Scroll to explore</span>
-            <a 
-              href="#about" 
-              className="p-2 rounded-full hover:bg-accent transition-colors duration-300 focus-ring"
-              aria-label="Scroll to About section"
+            <svg 
+              className="w-6 h-6 text-muted animate-bounce" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
             >
-              <svg 
-                className="w-6 h-6 text-muted animate-bounce" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </a>
-          </div>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
         </div>
       </div>
 
