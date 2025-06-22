@@ -7,21 +7,20 @@ import TeamSection from '@/components/teamSection';
 import PublicationsSection from '@/components/publicationsSection';
 import RelatedProjectsSection from '@/components/relatedProjectsSection';
 import JoinUsSection from '@/components/joinUsSection';
+import InteractiveBackground from '@/components/InteractiveBackground';
 
 export default function Home() {
   return (
-    <PageShell>
-      <HeroSection />
-
-      <AboutSection />
-
-      <PublicationsSection />
-
-      <TeamSection />
-
-      <RelatedProjectsSection />
-
-      <JoinUsSection />
-    </PageShell>
+    <>
+      <InteractiveBackground />
+      <PageShell>
+        <HeroSection />
+        <AboutSection />
+        <PublicationsSection />
+        <TeamSection />
+        <RelatedProjectsSection />
+        <JoinUsSection />
+      </PageShell>
+    </>
   );
 }

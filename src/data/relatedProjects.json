@@ -14,8 +14,8 @@
       "title": "The Deckle Project",
       "description": "Interactive drawing interface that explores the relationship between visual mark-making and sound generation.",
       "url": "https://nime.org/proc/choi2012/index.html",
-      "tags": ["Interactive Art", "Sound Design", "HCI"],
-      "relevance": "Pioneering work in visual-sonic mapping that influenced our approach to real-time drawing-to-sound translation.",
+      "tags": ["Sonification", "HCI"],
+      "relevance": "Inspired our approach to real-time drawing-to-sound translation on a wooden board.",
       "authors": ["Hongchan Choi", "John Granzow", "Joel Sadler"]
     }
   ]
