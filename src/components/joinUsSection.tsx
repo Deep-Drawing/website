@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 export default function JoinUsSection() {
   const [inView, setInView] = useState(false);
@@ -64,9 +65,11 @@ export default function JoinUsSection() {
                   rel="noopener noreferrer"
                   className="interactive-card hover:scale-105 transition-transform duration-300 focus-ring rounded-xl"
                 >
-                  <img 
+                  <Image
                     src="/images/artsengine.webp" 
                     alt="ArtsEngine Logo" 
+                    width={48}
+                    height={48}
                     className="h-10 md:h-12 object-contain"
                   />
                 </a>

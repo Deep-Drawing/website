@@ -1,15 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import AnimatedSection from './AnimatedSection';
 
 export default function HeroSection() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Elements */}
@@ -20,28 +14,24 @@ export default function HeroSection() {
         <div className="text-center space-y-6 pt-8 pb-20">
           {/* Main Title */}
           <div className="">
-            <h1 
-              className={`text-display font-bold tracking-tight text-gradient leading-tight pb-4 ${
-                mounted ? 'animate-fade-in-up' : 'opacity-0'
-              }`}
-            >
-              Deep Drawing
-            </h1>
+            <AnimatedSection>
+              <h1 className="text-display font-bold tracking-tight text-gradient leading-tight pb-4">
+                Deep Drawing
+              </h1>
+            </AnimatedSection>
             
-            <p 
-              className={`text-body-large text-muted max-w-3xl mx-auto leading-relaxed ${
-                mounted ? 'animate-fade-in-up animate-stagger-1' : 'opacity-0'
-              }`}
-            >
-              Towards an intuitive artistic dialogue between humans and AI. Through sound.
-            </p>
+            <AnimatedSection delay={0.2}>
+              <p className="text-body-large text-muted max-w-3xl mx-auto leading-relaxed">
+                Towards an intuitive artistic dialogue between humans and AI. Through sound.
+              </p>
+            </AnimatedSection>
           </div>
 
           {/* Hero Image */}
-          <div 
-            className={`relative max-w-6xl mx-auto ${
-              mounted ? 'animate-scale-in animate-stagger-2' : 'opacity-0'
-            }`}
+          <AnimatedSection 
+            direction="scale" 
+            delay={0.4}
+            className="relative max-w-6xl mx-auto"
           >
             <div className="aspect-[16/9] relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
               {/* Gradient overlay for better contrast */}
@@ -63,14 +53,13 @@ export default function HeroSection() {
             {/* Floating elements */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-foreground/5 to-transparent rounded-full blur-xl animate-float" />
             <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-tr from-foreground/3 to-transparent rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }} />
-          </div>
+          </AnimatedSection>
         </div>
 
         {/* Scroll Indicator */}
-        <div 
-          className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 animate-pulse-subtle ${
-            mounted ? 'animate-fade-in-up animate-stagger-3' : 'opacity-0'
-          }`}
+        <AnimatedSection 
+          delay={0.6}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 animate-pulse-subtle"
         >
           <span className="text-xs text-muted font-medium tracking-wider uppercase">Scroll to explore</span>
           <a 
@@ -87,7 +76,7 @@ export default function HeroSection() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </a>
-        </div>
+        </AnimatedSection>
       </div>
 
     </section>

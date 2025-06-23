@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useLabMembers } from '@/hooks/useLabMembers';
 import { useEffect, useRef, useState } from 'react';
+import { LabMember } from '@/types/labMembers';
 
 export default function TeamSection() {
   const [inView, setInView] = useState(false);
@@ -90,7 +91,7 @@ export default function TeamSection() {
   const students = getStudents();
   const alums = getAlums();
 
-  const TeamMemberCard = ({ member, index }: { member: any; index: number }) => {
+  const TeamMemberCard = ({ member, index }: { member: LabMember; index: number }) => {
     const content = (
       <div 
         className={`group interactive-card bg-background border border-border rounded-2xl p-6 h-full transition-all duration-500 hover:shadow-xl hover:border-foreground/20 ${
