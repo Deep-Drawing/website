@@ -90,6 +90,15 @@ export default function AboutSection() {
                   sizes="(max-width: 768px) 100vw, 40vw"
                 />
                 <div className="absolute inset-0 rounded-2xl border border-white/10" />
+                
+                {/* Overlay Text */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-tight">
+                      Our Vision
+                    </h3>
+                  </div>
+                </div>
               </div>
               
               {/* Floating accent */}
@@ -114,6 +123,15 @@ export default function AboutSection() {
                   sizes="(max-width: 768px) 100vw, 40vw"
                 />
                 <div className="absolute inset-0 rounded-2xl border border-white/10" />
+                
+                {/* Overlay Text */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl tracking-tight">
+                      Our Technology
+                    </h3>
+                  </div>
+                </div>
               </div>
               
               {/* Floating accent */}
