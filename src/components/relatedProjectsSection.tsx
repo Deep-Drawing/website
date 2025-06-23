@@ -57,122 +57,200 @@ export default function RelatedProjectsSection() {
             }`}
           />
         </div>
-        
-        {/* Projects Carousel */}
-        <div 
-          className={`relative ${
-            inView ? 'animate-fade-in-up animate-stagger-3' : 'opacity-0'
-          }`}
-        >
-          {/* Gradient overlays for scroll indication */}
-          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-          
+
+        {/* Projects Section */}
+        <div>
           <div 
-            className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide scroll-smooth"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className={`flex items-center mb-12 ${
+              inView ? 'animate-fade-in-up animate-stagger-3' : 'opacity-0'
+            }`}
           >
-            <style jsx>{`
-              div::-webkit-scrollbar {
-                height: 6px;
-              }
-              div::-webkit-scrollbar-track {
-                background: var(--accent);
-                border-radius: 3px;
-              }
-              div::-webkit-scrollbar-thumb {
-                background: var(--muted);
-                border-radius: 3px;
-              }
-              div::-webkit-scrollbar-thumb:hover {
-                background: var(--foreground);
-              }
-            `}</style>
-            
+            <h3 className="text-subheading font-medium">Inspiring Research</h3>
+            <div className="flex-1 h-px bg-border ml-6" />
+            <div className="ml-4 px-3 py-1 bg-accent rounded-full text-sm text-muted font-medium">
+              Click to explore
+            </div>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="space-y-6">
             {relatedProjects.map((project: RelatedProject, index) => (
               <div 
-                key={project.id} 
-                className="flex-none w-80 group interactive-card bg-background border border-border rounded-2xl p-6 hover:shadow-xl hover:border-foreground/20 hover:z-20 transition-all duration-500"
-                style={{ animationDelay: `${(index + 4) * 0.1}s` }}
+                key={project.id}
+                className={`group bg-background border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:border-foreground/20 transition-all duration-500 ${
+                  inView ? 'animate-fade-in-up' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${(index + 4) * 0.15}s` }}
               >
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.slice(0, 3).map((tag, tagIndex) => (
-                    <span 
-                      key={tagIndex}
-                      className="px-3 py-1 text-xs bg-accent text-muted rounded-full font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                  {project.tags.length > 3 && (
-                    <span className="px-3 py-1 text-xs bg-accent text-muted rounded-full font-medium">
-                      +{project.tags.length - 3}
-                    </span>
-                  )}
-                </div>
+                <div className="p-8">
+                  <div className="grid md:grid-cols-3 gap-8">
+                    {/* Left Column - Main Info */}
+                    <div className="md:col-span-2 space-y-6">
+                      {/* Header with Tags */}
+                      <div className="flex flex-wrap items-start gap-3">
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag, tagIndex) => (
+                            <span 
+                              key={tagIndex}
+                              className="px-3 py-1.5 text-sm bg-accent text-muted rounded-full font-medium border border-border/50"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <a 
+                          href={project.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="ml-auto p-2 rounded-full bg-accent hover:bg-foreground/10 transition-colors duration-300 focus-ring"
+                          onClick={(e) => e.stopPropagation()}
+                          aria-label={`Visit ${project.title}`}
+                        >
+                          <svg 
+                            className="w-5 h-5 text-muted hover:text-foreground transition-colors duration-300" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      </div>
 
-                {/* Title */}
-                <h3 className="text-lg font-semibold mb-3 group-hover:text-gradient transition-all duration-300">
-                  <a 
-                    href={project.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center hover:underline focus-ring rounded-md"
-                  >
-                    {project.title}
-                    <svg className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                </h3>
-                
-                {/* Description */}
-                <p className="text-sm text-muted leading-relaxed mb-4">
-                  {project.description}
-                </p>
+                      {/* Title & Description */}
+                      <div>
+                        <h4 className="text-subheading font-semibold mb-3 group-hover:text-gradient transition-colors duration-300">
+                          {project.title}
+                        </h4>
+                        <p className="text-body text-muted leading-relaxed">
+                          {project.description}
+                        </p>
+                      </div>
 
-                {/* Relevance */}
-                <div className="bg-accent rounded-lg p-4 mb-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full flex-shrink-0 mt-1" />
-                    <div>
-                      <div className="text-xs text-muted font-medium mb-1">Relevance</div>
-                      <p className="text-xs text-muted italic leading-relaxed">
-                        {project.relevance}
-                      </p>
+                      {/* Authors */}
+                      {project.authors && project.authors.length > 0 && (
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-foreground rounded-full animate-pulse-subtle" />
+                          <div className="text-body text-muted">
+                            <span className="font-medium">Researchers: </span>
+                            {project.authors.join(', ')}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Right Column - Relevance */}
+                    <div className="relative">
+                      <div className="bg-accent rounded-xl p-6 h-full border border-border/50 group-hover:border-foreground/20 transition-colors duration-500">
+                        <div className="flex items-start space-x-3 h-full">
+                          <div className="flex-shrink-0">
+                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-foreground/20 to-muted/20 flex items-center justify-center">
+                              <svg className="w-4 h-4 text-foreground/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <div className="text-sm font-semibold text-foreground mb-3">
+                              Relevance
+                            </div>
+                            <p className="text-sm text-muted leading-relaxed">
+                              {project.relevance}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                {/* Authors */}
-                {project.authors && (
-                  <div className="pt-2 border-t border-border">
-                    <div className="text-xs text-muted">
-                      <span className="font-medium">Authors: </span>
-                      {project.authors.join(', ')}
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
-          </div>
-        </div>
 
-        {/* Navigation hint */}
-        <div 
-          className={`text-center mt-8 ${
-            inView ? 'animate-fade-in-up animate-stagger-4' : 'opacity-0'
-          }`}
-        >
-          <div className="inline-flex items-center px-4 py-2 bg-accent rounded-full text-xs text-muted">
-            <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
-            </svg>
-            Scroll horizontally to explore more projects
-            <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            {/* Call to Action Card */}
+            <div 
+              className={`group bg-background border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:border-foreground/20 transition-all duration-500 ${
+                inView ? 'animate-fade-in-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${(relatedProjects.length + 4) * 0.15}s` }}
+            >
+              <div className="p-8">
+                <div className="grid md:grid-cols-3 gap-8">
+                  {/* Left Column - Main Info */}
+                  <div className="md:col-span-2 space-y-6">
+                    {/* Header with Tag */}
+                    <div className="flex flex-wrap items-start gap-3">
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1.5 text-sm bg-accent text-muted rounded-full font-medium border border-border/50">
+                          Community
+                        </span>
+                      </div>
+                      <a 
+                        href="#join-us" 
+                        className="ml-auto p-2 rounded-full bg-accent hover:bg-foreground/10 transition-colors duration-300 focus-ring"
+                        aria-label="Go to Join Us section"
+                      >
+                        <svg 
+                          className="w-5 h-5 text-muted hover:text-foreground transition-colors duration-300" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </a>
+                    </div>
+
+                    {/* Title & Description */}
+                    <div>
+                      <h4 className="text-subheading font-semibold mb-3 group-hover:text-gradient transition-colors duration-300">
+                        Know of Related Work?
+                      </h4>
+                      <p className="text-body text-muted leading-relaxed">
+                        We&apos;re always looking to expand our understanding of the field. 
+                        If you know of projects that align with our research, we&apos;d love to hear about them.
+                      </p>
+                    </div>
+
+                    {/* Action */}
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-foreground rounded-full animate-pulse-subtle" />
+                      <div className="text-body text-muted">
+                        
+                        <a 
+                          href="mailto:zhujulie@umich.edu" 
+                          className="text-foreground hover:text-gradient transition-colors duration-300 underline hover:no-underline"
+                        >
+                          Share your discoveries
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Call to Action */}
+                  <div className="relative">
+                    <div className="bg-accent rounded-xl p-6 h-full border border-border/50 group-hover:border-foreground/20 transition-colors duration-500">
+                      <div className="flex items-start space-x-3 h-full">
+                        <div className="flex-shrink-0">
+                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-foreground/20 to-muted/20 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-foreground/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-6a2 2 0 012-2h2m-2-4h6a2 2 0 012 2v6a2 2 0 01-2 2H9l-4 4v-4H3a2 2 0 01-2-2V5a2 2 0 012-2z" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-sm font-semibold text-foreground mb-3">
+                            Talk to Us
+                          </div>
+                          <p className="text-sm text-muted leading-relaxed">
+                            Let&apos;s chat about projects that explore similar themes of human-AI collaboration, music, art, and interactive systems.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
