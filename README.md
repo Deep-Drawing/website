@@ -33,11 +33,11 @@ The about section content can be updated in two ways:
   - Edit the text within the `<p>` tags directly in the component
   - The content is structured in two main sections with accompanying images
 
-#### Subtitles
-- **Current subtitles**: "Subtitle 1" and "Subtitle 2" (lines 11 and 35)
-- **To update subtitles**: 
-  - **Option 1**: Contact Alex to update in Figma
-  - **Option 2**: Update directly in the code by editing the `<h3>` tags in `aboutSection.tsx`
+#### Image Overlay Text
+- **Current overlay text**: "Our Vision" and "Our Technology"
+- **To update**: 
+  - Edit the `<h3>` tags within the image overlay sections in `aboutSection.tsx`
+  - These appear as centered text over the images
 
 #### Images
 - Images are located in `/public/images/`
@@ -213,6 +213,30 @@ Related projects are managed through a JSON file to showcase relevant work and r
   "authors": ["John Smith", "Sarah Johnson"]
 }
 ```
+
+### 5. Join Us Section
+
+Information about joining the Deep Drawing project and UARTS FEAST opportunities.
+
+#### File Location
+- **File**: `src/components/joinUsSection.tsx`
+
+#### What you can update
+- **ArtsEngine Logo**: Update the logo file in `/public/images/artsengine.webp`
+- **Project Description**: Edit paragraph text within the `<p>` tags
+- **Opportunities**: Update the three opportunity cards (Machine Learning, Summer Fellowships, Open to All)
+- **Application Link**: Update the href in the "Apply to Join Deep Drawing" button
+
+#### Key Links to Update
+- ArtsEngine website: `https://artsengine.engin.umich.edu/`
+- Application link: `https://artsengine.engin.umich.edu/feast/deep-drawing/`
+
+#### How to Update
+1. Open `src/components/joinUsSection.tsx`
+2. Edit text content within `<p>` tags for descriptions
+3. Update opportunity card content in the grid section
+4. Modify links in the `<a>` tags as needed
+5. Replace ArtsEngine logo if necessary
 
 ## Development Notes
 
