@@ -63,18 +63,18 @@ export default function JoinUsSection() {
                   href="https://artsengine.engin.umich.edu/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="interactive-card hover:scale-105 transition-transform duration-300 focus-ring rounded-xl"
+                  className="interactive-card hover:scale-105 transition-transform duration-300 focus-ring rounded-xl flex items-center justify-center min-h-[80px] px-4"
                 >
                   <Image
                     src="/images/artsengine.webp" 
                     alt="ArtsEngine Logo" 
-                    width={48}
-                    height={48}
-                    className="h-10 md:h-12 object-contain"
+                    width={64}
+                    height={64}
+                    className="h-12 md:h-16 w-auto object-contain"
                   />
                 </a>
                 
-                <div className="text-center md:text-left">
+                <div className="text-center md:text-left flex flex-col justify-center min-h-[80px] py-2">
                   <h3 className="text-subheading font-semibold mb-2">UARTS FEAST Project</h3>
                   <p className="text-body text-muted">Faculty Engineering/Arts Student Teams</p>
                 </div>
