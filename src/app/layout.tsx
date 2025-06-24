@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Deep Drawing - AI & Human Artistic Collaboration",
+  title: "Deep Drawing",
   description: "Towards an intuitive artistic dialogue between humans and AI through sound. Deep Drawing is an intermedia AI co-performer creating real-time artistic collaboration.",
   keywords: ["AI", "artificial intelligence", "art", "sound", "machine learning", "human-computer interaction", "collaboration", "University of Michigan", "UARTS FEAST"],
   authors: [{ name: "Deep Drawing Research Team" }],

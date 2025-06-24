@@ -39,7 +39,7 @@ export default function HeroSection() {
               
               <Image 
                 src="/images/cover.png" 
-                alt="Deep Drawing - AI and Human Artistic Collaboration" 
+                alt="Deep Drawing" 
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
                 priority
